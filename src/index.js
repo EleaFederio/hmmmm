@@ -25,14 +25,16 @@ const render = () => {
 
 if(token){
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  axios.get('http://127.0.0.1:8000/api/user/' + user_id ).then(res => {
+  axios.get('http://10.0.0.222:8000/api/user/' + user_id ).then(res => {
     console.log(res);
     console.log(token);
-    store.dispatch({type: "SET_LOGIN", payload: res})
+    store.dispatch({type: "SET_LOGIN", payload: res.data.data})
     render();
   })
   .catch(e => {
-    if(e.response.status === 401){
+    console.log(e);
+    let error = e.response.status;
+    if(error === 401){
       console.log("hahaha");
       cookie.remove("token");
       cookie.remove("user_id");

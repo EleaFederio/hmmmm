@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { axios } from '../lib/axios';
 import FoodCatalog from './FoodCatalog';
+import "../design/HomeDesign.css";
 
-export default function Home() {
+ const Home = () => {
 
 
     const [foods, setFoods] = useState([]);
@@ -22,15 +23,21 @@ export default function Home() {
     }, [])
 
 
+    console.log('noFoods : ' + noFoods);
+
     return(
       <div className={'container'}>
             <br/><br/>
           <h1>This is Home</h1>
           <div className={'row'}>
-              {!noFoods && foods.map((foods, index) => (
-                  <FoodCatalog key={foods.id} {...foods}/>
+              {!noFoods && foods.map((food, index) => (
+                  <FoodCatalog key={food.id} {...food}/>
+                  
               ))}
           </div>
       </div>
     );
 }
+
+
+export default Home;

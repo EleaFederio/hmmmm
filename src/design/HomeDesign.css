@@ -1,0 +1,103 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: linear-gradient(to right, #ffd6b5, #ffe359);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 30;
+}
+.price-style{
+    color: red;
+}
+.product-grid{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.description-style{
+    margin: 0;
+}
+.image{
+    position: relative;
+}
+.image:hover .overlay{
+    opacity: 1;
+}
+.detail{
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.product-grid:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.btn-buy{
+    background-color: rgba(255,97,29, 0.9);
+    color: #434444;
+    border-radius: 0;
+    border: 1px solid #434444;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.btn-buy-details{
+    background-color: rgba(227,41,41, 0.8);
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid #434444;
+    width: 100%;
+}
+
+.btn-buy-details:hover{
+    background-color: rgba(227,41,41, 1);
+    color: #fff;
+    width: 100%;
+}
+
+.btn-cart{
+    background-color: rgba(227,41,41, 0.8);
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid #434444;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+.btn-cart-details{
+    background-color: rgba(255,97,29, 0.9);
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid #434444;
+    width: 100%;
+}
+.btn-cart-details:hover{
+    background-color: rgba(255,97,29, 1);
+    color: #fff;
+    width: 100%;
+}
+.btn-buy:hover{
+    background-color: rgba(255,97,29, 1);
+    color: #fff;
+}
+.btn-cart:hover{
+    background-color: rgba(227,41,41, 1);
+    color: #fff;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(67, 68, 68, 0.7);
+}

@@ -27,8 +27,8 @@ class Login extends Component {
         const data = {phoneNumber: this.state.email, password: this.state.password}
 
         axios.defaults.withCredentials = true;
-        axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie").then(response => {
-            axios.post('http://127.0.0.1:8000/api/customer_login', data)
+        axios.get("http://10.0.0.222:8000/sanctum/csrf-cookie").then(response => {
+            axios.post('http://10.0.0.222:8000/api/customer_login', data)
             .then(res => {
                 console.log(res.data);
                 cookie.set('token', res.data.token);

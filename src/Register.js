@@ -33,8 +33,8 @@ class Register extends Component {
         }
 
         axios.defaults.withCredentials = true;
-        axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie").then(response => {
-            axios.post('http://127.0.0.1:8000/api/customer_register', data)
+        axios.get("http://10.0.0.222:8000/sanctum/csrf-cookie").then(response => {
+            axios.post('http://10.0.0.222:8000/api/customer_register', data)
             .then(res => {
                 console.log(res.data);
                 cookie.set('token', res.data.token);
@@ -73,19 +73,19 @@ class Register extends Component {
                                         <Form.Group>
                                             <Form.Label>First Name</Form.Label>
                                             <Col>
-                                                <Form.Control type={'text'} name={'firstname'} onChange={this.handleInput} placeholder={'Enter Email'} value={this.state.firstname} />
+                                                <Form.Control type={'text'} name={'firstname'} onChange={this.handleInput} placeholder={'Enter Firstname'} value={this.state.firstname} />
                                             </Col>
                                         </Form.Group>
                                         <Form.Group>
                                             <Form.Label>Last Name</Form.Label>
                                             <Col>
-                                                <Form.Control type={'text'} name={'lastname'} onChange={this.handleInput} placeholder={'Enter Email'} value={this.state.lastname} />
+                                                <Form.Control type={'text'} name={'lastname'} onChange={this.handleInput} placeholder={'Enter Lastname'} value={this.state.lastname} />
                                             </Col>
                                         </Form.Group>
                                         <Form.Group>
                                             <Form.Label>Phone Number</Form.Label>
                                             <Col>
-                                                <Form.Control type={'text'} name={'email'} onChange={this.handleInput} placeholder={'Enter Email'} value={this.state.email} />
+                                                <Form.Control type={'text'} name={'email'} onChange={this.handleInput} placeholder={'Enter Phone number'} value={this.state.email} />
                                             </Col>
                                         </Form.Group>
                                         <Form.Group>
@@ -97,7 +97,7 @@ class Register extends Component {
                                         <Form.Group>
                                             <Form.Label>Confirm Password</Form.Label>
                                             <Col>
-                                                <Form.Control type={'password'} name={'confirm_password'} onChange={this.handleInput} placeholder={'Enter Password'} value={this.state.confirm_password} />
+                                                <Form.Control type={'password'} name={'confirm_password'} onChange={this.handleInput} placeholder={'Enter Confirm Password'} value={this.state.confirm_password} />
                                             </Col>
                                         </Form.Group>
                                         <Button variant={'primary'} className={'mt-2'} type={'submit'}>
